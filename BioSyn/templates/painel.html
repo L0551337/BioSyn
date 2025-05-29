@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Painel{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h1 class="mb-3">Bem-vindo, {{ nome }}!</h1>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <div class="painel-btns text-center mt-4">
+        <a href="{{ url_for('atividades') }}" class="btn btn-outline-primary me-2">Ver Atividades</a>
+        <a href="{{ url_for('guias') }}" class="btn btn-outline-success">Ver Guias</a>
+    </div>
+</div>
+{% endblock %}

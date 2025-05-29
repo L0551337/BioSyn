@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Guias das Plantas{% endblock %}
+{% block content %}
+<h1 class="mb-4">Guias das Plantas</h1>
+
+<a href="{{ url_for('adicionar_planta') }}" class="btn btn-success mb-3">Adicionar Nova Planta</a>
+
+<div class="row">
+    {% for planta in plantas %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="{{ url_for('static', filename='images/' ~ planta.imagem_url) }}" class="card-img-top" alt="{{ planta.nome }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ planta.nome }}</h5>
+                <p class="card-text">{{ planta.descricao }}</p>
+                <p><strong>Valor do vaso:</strong> R$ {{ planta.valor_vaso }}</p>
+
+                <!-- Botão de exclusão -->
+                <form action="{{ url_for('excluir_planta', planta_id=planta.id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta planta?');">
+                    <button type="submit" class="btn btn-danger mt-2">Excluir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<a href="{{ url_for('painel') }}" class="btn btn-secondary mt-3">← Voltar ao painel</a>
+{% endblock %}

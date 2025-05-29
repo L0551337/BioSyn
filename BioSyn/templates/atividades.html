@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Minhas Atividades{% endblock %}
+{% block content %}
+<h2 class="mb-4">Minhas Atividades</h2>
+
+{% if todas_concluidas %}
+    <div class="alert alert-success">Atividades do dia concluídas!</div>
+{% endif %}
+
+{% if atividades %}
+    <ul class="list-group mb-3">
+    {% for atividade in atividades %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <strong>Descrição:</strong> {{ atividade.descricao }}<br>
+                <strong>Data:</strong> {{ atividade.data_geracao.strftime('%d/%m/%Y') }}<br>
+                <strong>Status:</strong> {{ 'Concluída' if atividade.concluida else 'Pendente' }}
+            </div>
+            {% if not atividade.concluida %}
+            <form method="post" action="{{ url_for('concluir_atividade', id=atividade.id) }}">
+                <button type="submit" class="btn btn-outline-success btn-sm">Concluir</button>
+            </form>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma atividade registrada.</p>
+{% endif %}
+
+{% if pode_gerar %}
+    <form method="post" action="{{ url_for('gerar_atividades') }}">
+        <button type="submit" class="btn btn-primary">Gerar Atividades</button>
+    </form>
+{% endif %}
+
+<a href="{{ url_for('painel') }}" class="btn btn-secondary mt-4">← Voltar ao painel</a>
+{% endblock %}

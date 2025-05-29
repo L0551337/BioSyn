@@ -1,0 +1,87 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h2 {
+    color: #198754;
+}
+
+.card {
+    border-radius: 8px;
+}
+
+/* Cores principais */
+:root {
+    --verde-pastel: #b7d9b1;
+    --branco: #ffffff;
+    --cinza-claro: #f8f9fa;
+    --cinza-texto: #444;
+    --verde-escuro: #2f684e;
+}
+
+/* Corpo */
+body {
+    background-color: var(--cinza-claro);
+    color: var(--cinza-texto);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cabeçalho */
+.navbar {
+    background-color: var(--verde-pastel) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--verde-escuro) !important;
+    font-weight: 500;
+}
+
+/* Formulários */
+form input,
+form button {
+    border-radius: 8px;
+}
+
+form button {
+    background-color: var(--verde-escuro);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+form button:hover {
+    background-color: #24543e;
+}
+
+/* Cartões (guias) */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.card img {
+    height: 220px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    color: var(--verde-escuro);
+}
+
+/* Painel de botões */
+.painel-btns a {
+    margin: 10px 10px 0 0;
+}
+
+/* Login e cadastro centralizados */
+.centered-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}

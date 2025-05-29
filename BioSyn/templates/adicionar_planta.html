@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Adicionar Nova Planta{% endblock %}
+{% block content %}
+<h2>Adicionar Nova Planta</h2>
+<form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome da Planta</label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+    </div>
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label>
+        <textarea class="form-control" id="descricao" name="descricao" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="valor_vaso" class="form-label">Valor do Vaso</label>
+        <input type="number" class="form-control" id="valor_vaso" name="valor_vaso" step="0.01" required>
+    </div>
+    <div class="mb-3">
+        <label for="imagem" class="form-label">Imagem da Planta</label>
+        <input class="form-control" type="file" id="imagem" name="imagem" accept="image/*" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+</form>
+{% endblock %}

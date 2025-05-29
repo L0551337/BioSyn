@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhes da Planta{% endblock %}
+
+{% block content %}
+<div class="card mb-4">
+    <img src="{{ url_for('static', filename='images/' ~ planta.imagem_url) }}" class="card-img-top" alt="{{ planta.nome }}">
+    <div class="card-body">
+        <h4 class="card-title">{{ planta.nome }}</h4>
+        <p class="card-text">{{ planta.descricao }}</p>
+        <a href="{{ url_for('guias') }}" class="btn btn-secondary mt-2">← Voltar aos guias</a>
+    </div>
+</div>
+{% endblock %}

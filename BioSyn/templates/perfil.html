@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Perfil do Usuário{% endblock %}
+{% block content %}
+<div class="text-center">
+    <h2 class="mb-3">Perfil</h2>
+    <p><strong>Nome:</strong> {{ session['usuario_nome'] }}</p>
+    <p><strong>Email:</strong> {{ session['usuario_email'] }}</p>
+    <a href="{{ url_for('painel') }}" class="btn btn-secondary mt-3">← Voltar ao painel</a>
+</div>
+{% endblock %}
