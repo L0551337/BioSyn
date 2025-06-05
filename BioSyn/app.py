@@ -1,5 +1,4 @@
 import os
-
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_mysqldb import MySQL
 import MySQLdb.cursors
@@ -210,7 +209,7 @@ def adicionar_planta():
         
         if imagem:
             imagem_filename = imagem.filename
-            imagem_path = os.path.join('static/images', imagem_filename)
+            imagem_path = os.path.join('C:/Users/enzol/OneDrive/Documentos/vscode/webdev/Unialfa/BioSyn/BioSyn/static/images', imagem_filename)
             imagem.save(imagem_path)
 
             cursor = mysql.connection.cursor()
