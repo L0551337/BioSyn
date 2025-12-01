@@ -209,7 +209,7 @@ def adicionar_planta():
         
         if imagem:
             imagem_filename = imagem.filename
-            imagem_path = os.path.join('C:/Users/enzol/OneDrive/Documentos/vscode/webdev/Unialfa/BioSyn/BioSyn/static/images', imagem_filename)
+            imagem_path = os.path.join('C:/Users/enzol/OneDrive/Documentos/vscode/webdev/Unialfa/3o_Periodo/BioSyn/BioSyn/static/images', imagem_filename)
             imagem.save(imagem_path)
 
             cursor = mysql.connection.cursor()
